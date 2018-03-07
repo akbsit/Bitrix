@@ -2,7 +2,7 @@
 
 ## Order (Заказ)
 
-### addOrderProperty()
+### * addOrderProperty()
 
 Сниппет динамически добавляет свойство к заказу.
 
