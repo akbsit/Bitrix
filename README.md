@@ -2,16 +2,28 @@
 
 ## Order (Заказ)
 
+* getOrderProperties()
+
+Сниппет получает набор свойств относящихся к заказу.
+
+```php
+$props = getOrderProperties([
+    'order' => 5 // int ID заказа
+]);
+```
+
+При успешной отработке возвращает – **массив свойств** в другом случае – **false**.
+
 * addOrderProperty()
 
 Сниппет динамически добавляет свойство к заказу.
 
 ```php
-    $id = addOrderProperty([
-        'order' => 5,                // int ID заказа
-        'code'  => 'ADDRESS',        // string CODE заказа
-        'value' => 'ул. Могилевская' // string VALUE заказа
-    ]);
+$id = addOrderProperty([
+    'order' => 5,                // int ID заказа
+    'code'  => 'ADDRESS',        // string CODE заказа
+    'value' => 'ул. Могилевская' // string VALUE заказа
+]);
 ```
 
 При успешной отработке возвращает - **ID добавленного свойства**. Если свойство было добавлено ранее или произошла ошибка –  **false**.
