@@ -19,9 +19,9 @@ function getProductPrice($params = [])
                 $tmp['PRICE']    = $price['PRICE'];
             }
 
-            if ($discount = CCatalogDiscount::GetDiscountByProduct($product)) {
+            if ($discounts = CCatalogDiscount::GetDiscountByProduct($product)) {
 
-                $tmp['PRICE_DISCOUNT'] = CCatalogProduct::CountPriceWithDiscount($price['PRICE'], $price['CURRENCY'], $discount);
+                $tmp['PRICE_DISCOUNT'] = CCatalogProduct::CountPriceWithDiscount($price['PRICE'], $price['CURRENCY'], $discounts);
             }
         }
     }

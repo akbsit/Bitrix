@@ -13,12 +13,12 @@ function addOrderProperty($params = [])
 
         if (CModule::IncludeModule('sale')) {
 
-            if ($props = CSaleOrderProps::GetList([], ['CODE' => $code])->Fetch()) {
+            if ($prop = CSaleOrderProps::GetList([], ['CODE' => $code])->Fetch()) {
 
                 return CSaleOrderPropsValue::Add([
-                    'NAME'           => $props['NAME'],
-                    'CODE'           => $props['CODE'],
-                    'ORDER_PROPS_ID' => $props['ID'],
+                    'NAME'           => $prop['NAME'],
+                    'CODE'           => $prop['CODE'],
+                    'ORDER_PROPS_ID' => $prop['ID'],
                     'ORDER_ID'       => $order,
                     'VALUE'          => $value
                 ]);

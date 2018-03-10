@@ -21,12 +21,25 @@ $props = getOrderProperties([
 ```php
 $id = addOrderProperty([
     'order' => 5,                // int ID заказа
-    'code'  => 'ADDRESS',        // string CODE заказа
-    'value' => 'ул. Могилевская' // string VALUE заказа
+    'code'  => 'ADDRESS',        // string CODE свойства
+    'value' => 'ул. Могилевская' // string VALUE свойства
 ]);
 ```
 
 При успешной отработке возвращает - **ID добавленного свойства**. Если свойство было добавлено ранее или произошла ошибка –  **false**.
+
+* updateOrderProperty()
+
+Сниппет динамически обновляет значение свойства заказа.
+
+```php
+$id = updateOrderProperty([
+    'order' => 5,          // int ID заказа
+    'code'  => 'ADDRESS',  // string CODE свойства
+    'value' => 'ул. Новая' // string VALUE свойства
+]);
+```
+При успешной отработке возвращает - **ID обновленного свойства**.  Если свойства не существует или произошла ошибка –  **false**.
 
 ## Product (Товар)
 
