@@ -1,30 +1,30 @@
 <?
 /**
- * @param array $params
+ * @param array $arParams
  * @return array
  */
-function getProductPrice($params = [])
+function getProductPrice($arParams = [])
 {
-    $tmp = [];
+    $arResult = [];
 
-    if ($params && !empty($params['product'])) {
+    if ($arParams && !empty($arParams['id'])) {
 
-        $product = $params['product'];
+        $iProductId = $arParams['id'];
 
-        if (CModule::IncludeModule('catalog')) {
+        if (\CModule::IncludeModule('catalog')) {
 
-            if ($price = CPrice::GetList([], ['PRODUCT_ID' => $product])->fetch()) {
+            if ($arPrice = \CPrice::GetList([], ['PRODUCT_ID' => $iProductId])->fetch()) {
 
-                $tmp['CURRENCY'] = $price['CURRENCY'];
-                $tmp['PRICE']    = $price['PRICE'];
+                $arResult['CURRENCY'] = $arPrice['CURRENCY'];
+                $arResult['PRICE'] = $arPrice['PRICE'];
             }
 
-            if ($discounts = CCatalogDiscount::GetDiscountByProduct($product)) {
+            if ($arDiscounts = \CCatalogDiscount::GetDiscountByProduct($iProductId)) {
 
-                $tmp['PRICE_DISCOUNT'] = CCatalogProduct::CountPriceWithDiscount($price['PRICE'], $price['CURRENCY'], $discounts);
+                $arResult['PRICE_DISCOUNT'] = \CCatalogProduct::CountPriceWithDiscount($arPrice['PRICE'], $arPrice['CURRENCY'], $arDiscounts);
             }
         }
     }
 
-    return $tmp;
+    return $arResult;
 }

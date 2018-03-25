@@ -1,28 +1,28 @@
 <?
 /**
- * @param array $params
- * @return bool
+ * @param array $arParams
+ * @return array
  */
-function getOrderProperties($params = [])
+function getOrderProperties($arParams = [])
 {
-    if ($params && !empty($params['order'])) {
+    if ($arParams && !empty($arParams['id'])) {
 
-        $order = $params['order'];
+        $iOrderId = (int)$arParams['id'];
 
-        if (CModule::IncludeModule('sale')) {
+        if (\CModule::IncludeModule('sale')) {
 
-            $props = Bitrix\Sale\Internals\OrderPropsValueTable::getList([
+            $arProps = \Bitrix\Sale\Internals\OrderPropsValueTable::getList([
                 'filter' => [
-                    'ORDER_ID' => $order
-                ]
+                    'ORDER_ID' => $iOrderId
+                ],
             ])->fetchAll();
 
-            if (!empty($props)) {
+            if (!empty($arProps)) {
 
-                return $props;
+                return $arProps;
             }
         }
     }
 
-    return false;
+    return [];
 }

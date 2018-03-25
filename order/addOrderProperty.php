@@ -1,30 +1,35 @@
 <?
 /**
- * @param array $params
- * @return bool
+ * @param array $arParams
+ * @return int
  */
-function addOrderProperty($params = [])
+function addOrderProperty($arParams = [])
 {
-    if ($params && !empty($params['order']) && !empty($params['code'])) {
+    if ($arParams && !empty($arParams['id']) && !empty($arParams['property']['code'])) {
 
-        $order = $params['order'];
-        $code  = $params['code'];
-        $value = !empty($params['value']) ? $params['value'] : '';
+        $iOrderId = $arParams['id'];
+        $sPropertyCode = $arParams['property']['code'];
+        $sPropertyValue = !empty($arParams['property']['value']) ? $arParams['property']['value'] : '';
 
-        if (CModule::IncludeModule('sale')) {
+        if (\CModule::IncludeModule('sale')) {
 
-            if ($prop = CSaleOrderProps::GetList([], ['CODE' => $code])->Fetch()) {
+            if ($arProp = \CSaleOrderProps::GetList([], ['CODE' => $sPropertyCode])->Fetch()) {
 
-                return CSaleOrderPropsValue::Add([
-                    'NAME'           => $prop['NAME'],
-                    'CODE'           => $prop['CODE'],
-                    'ORDER_PROPS_ID' => $prop['ID'],
-                    'ORDER_ID'       => $order,
-                    'VALUE'          => $value
+                $iPropId = \CSaleOrderPropsValue::Add([
+                    'NAME' => $arProp['NAME'],
+                    'CODE' => $arProp['CODE'],
+                    'ORDER_PROPS_ID' => $arProp['ID'],
+                    'ORDER_ID' => $iOrderId,
+                    'VALUE' => $sPropertyValue
                 ]);
+
+                if ($iPropId) {
+
+                    return $iPropId;
+                }
             }
         }
     }
 
-    return false;
+    return 0;
 }

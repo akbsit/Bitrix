@@ -1,33 +1,38 @@
 <?
 /**
- * @param array $params
- * @return bool
+ * @param array $arParams
+ * @return int
  */
-function updateOrderProperty($params = [])
+function updateOrderProperty($arParams = [])
 {
-    if ($params && !empty($params['order']) && !empty($params['code'])) {
+    if ($arParams && !empty($arParams['id']) && !empty($arParams['property']['code'])) {
 
-        $order = $params['order'];
-        $code  = $params['code'];
-        $value = !empty($params['value']) ? $params['value'] : '';
+        $iOrderId = $arParams['id'];
+        $sPropertyCode = $arParams['property']['code'];
+        $sPropertyValue = !empty($arParams['property']['value']) ? $arParams['property']['value'] : '';
 
-        if (CModule::IncludeModule('sale')) {
+        if (\CModule::IncludeModule('sale')) {
 
-            $prop = Bitrix\Sale\Internals\OrderPropsValueTable::getList([
+            $arProp = \Bitrix\Sale\Internals\OrderPropsValueTable::getList([
                 'filter' => [
-                    'ORDER_ID' => $order,
-                    'CODE'     => $code
+                    'ORDER_ID' => $iOrderId,
+                    'CODE' => $sPropertyCode
                 ]
             ])->Fetch();
 
-            if ($prop) {
+            if ($arProp) {
 
-                return CSaleOrderPropsValue::Update($prop['ID'], [
-                    'VALUE' => $value
+                $iPropId = \CSaleOrderPropsValue::Update($arProp['ID'], [
+                    'VALUE' => $sPropertyValue
                 ]);
+
+                if ($iPropId) {
+
+                    return $iPropId;
+                }
             }
         }
     }
 
-    return false;
+    return 0;
 }
