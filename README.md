@@ -60,6 +60,6 @@ $arPrice = getProductPrice([
 
 При успешной отработке возвращает – **массив (валюта, базовая цена, цена со скидками)** в другом случае – **пустой массив**.
 
-# Статьи
+# Статья
 
 [Добавление и обновление свойств в заказе с использованием Битрикс API](http://falbar.ru/article/dobavlenie-i-obnovlenie-svojstv-v-zakaze-s-ispolzovaniem-bitriks-api)

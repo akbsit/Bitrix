@@ -1,5 +1,6 @@
 <?
 /**
+ * Сниппет получает цену на товар
  * @param array $arParams
  * @return array
  */
