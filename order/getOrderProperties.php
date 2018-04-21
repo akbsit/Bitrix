@@ -1,4 +1,5 @@
-<?
+<?php
+
 /**
  * Сниппет получает набор свойств относящихся к заказу
  * @param array $arParams
@@ -7,11 +8,9 @@
 function getOrderProperties($arParams = [])
 {
     if ($arParams && !empty($arParams['id'])) {
-
         $iOrderId = (int)$arParams['id'];
 
         if (\CModule::IncludeModule('sale')) {
-
             $arProps = \Bitrix\Sale\Internals\OrderPropsValueTable::getList([
                 'filter' => [
                     'ORDER_ID' => $iOrderId
@@ -19,7 +18,6 @@ function getOrderProperties($arParams = [])
             ])->fetchAll();
 
             if (!empty($arProps)) {
-
                 return $arProps;
             }
         }
