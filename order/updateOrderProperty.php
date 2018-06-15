@@ -2,32 +2,28 @@
 
 /**
  * Сниппет динамически обновляет значение свойства заказа
- * @param array $arParams
+ * @param int $iOrderId
+ * @param string $sPropertyCode
+ * @param string $sPropertyValue
  * @return int
  */
-function updateOrderProperty($arParams = [])
+function updateOrderProperty($iOrderId = 0, $sPropertyCode = '', $sPropertyValue = '')
 {
-    if ($arParams && !empty($arParams['id']) && !empty($arParams['property']['code'])) {
-        $iOrderId = $arParams['id'];
-        $sPropertyCode = $arParams['property']['code'];
-        $sPropertyValue = !empty($arParams['property']['value']) ? $arParams['property']['value'] : '';
+    if ($iOrderId && $sPropertyCode && \CModule::IncludeModule('sale')) {
+        $arProp = \Bitrix\Sale\Internals\OrderPropsValueTable::getList([
+            'filter' => [
+                'ORDER_ID' => $iOrderId,
+                'CODE' => $sPropertyCode
+            ]
+        ])->Fetch();
 
-        if (\CModule::IncludeModule('sale')) {
-            $arProp = \Bitrix\Sale\Internals\OrderPropsValueTable::getList([
-                'filter' => [
-                    'ORDER_ID' => $iOrderId,
-                    'CODE' => $sPropertyCode
-                ]
-            ])->Fetch();
+        if ($arProp) {
+            $iPropId = \CSaleOrderPropsValue::Update($arProp['ID'], [
+                'VALUE' => $sPropertyValue ? $sPropertyValue : ''
+            ]);
 
-            if ($arProp) {
-                $iPropId = \CSaleOrderPropsValue::Update($arProp['ID'], [
-                    'VALUE' => $sPropertyValue
-                ]);
-
-                if ($iPropId) {
-                    return $iPropId;
-                }
+            if ($iPropId) {
+                return $iPropId;
             }
         }
     }
