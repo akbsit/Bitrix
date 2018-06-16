@@ -12,8 +12,8 @@ function updateOrderProperty($iOrderId = 0, $sPropertyCode = '', $sPropertyValue
     if ($iOrderId && $sPropertyCode && \CModule::IncludeModule('sale')) {
         $arProp = \Bitrix\Sale\Internals\OrderPropsValueTable::getList([
             'filter' => [
-                'ORDER_ID' => $iOrderId,
-                'CODE' => $sPropertyCode
+                '=ORDER_ID' => $iOrderId,
+                '=CODE' => $sPropertyCode
             ]
         ])->Fetch();
 

@@ -10,7 +10,7 @@
 function addOrderProperty($iOrderId = 0, $sPropertyCode = '', $sPropertyValue = '')
 {
     if ($iOrderId && $sPropertyCode && \CModule::IncludeModule('sale')) {
-        if ($arProp = \CSaleOrderProps::GetList([], ['CODE' => $sPropertyCode])->Fetch()) {
+        if ($arProp = \CSaleOrderProps::GetList([], ['=CODE' => $sPropertyCode])->Fetch()) {
             $iPropId = \CSaleOrderPropsValue::Add([
                 'NAME' => $arProp['NAME'],
                 'CODE' => $arProp['CODE'],

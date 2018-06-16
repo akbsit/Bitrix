@@ -10,7 +10,7 @@ function getProductPrice($iProductId = 0)
     $arResult = [];
 
     if ($iProductId && \CModule::IncludeModule('catalog')) {
-        if ($arPrice = \CPrice::GetList([], ['PRODUCT_ID' => $iProductId])->fetch()) {
+        if ($arPrice = \CPrice::GetList([], ['=PRODUCT_ID' => $iProductId])->fetch()) {
             $arResult['CURRENCY'] = $arPrice['CURRENCY'];
             $arResult['PRICE'] = $arPrice['PRICE'];
         }

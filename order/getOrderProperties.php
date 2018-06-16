@@ -10,7 +10,7 @@ function getOrderProperties($iOrderId = 0)
     if ($iOrderId && \CModule::IncludeModule('sale')) {
         $arProps = \Bitrix\Sale\Internals\OrderPropsValueTable::getList([
             'filter' => [
-                'ORDER_ID' => $iOrderId
+                '=ORDER_ID' => $iOrderId
             ],
         ])->fetchAll();
 
