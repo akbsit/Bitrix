@@ -15,3 +15,19 @@ $arElements = getHighloadElements(
 ```
 
 При успешной отработке возвращает – **массив элементов highload-блока** в другом случае – **пустой массив**.
+
+## updateHighloadElement()
+
+Сниппет обновляет значения полей highload-блока.
+
+```php
+$bUpdate = updateHighloadElement(
+    'tableName', // string название таблицы
+    5, // int ID элемента
+    [ // array массив обновляемых полей со значениями
+        'UF_NAME' => 'Новое имя'
+    ]
+);
+```
+
+При успешной отработке возвращает – **true** в другом случае – **false**.
