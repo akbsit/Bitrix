@@ -1,12 +1,12 @@
 # Bitrix
 
-[Highload (Хайлоад)](highload/README.md)
+[Highload (Хайлоад)](highload)
 
-[IBlock (Инфоблок)](iblock/README.md)
+[IBlock (Инфоблок)](iblock)
 
-[Order (Заказ)](order/README.md)
+[Order (Заказ)](order)
 
-[Product (Товар)](product/README.md)
+[Product (Товар)](product)
 
 # Статья
 
