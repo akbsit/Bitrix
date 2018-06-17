@@ -5,12 +5,12 @@
 ```php
 $arElements = getHighloadElements(
     'tableName', // string название таблицы
-    [ // array (необязательный)
-        'order' => 'desc' // string ASC|DESC направление сортировки
-        'limit' => // int количество возвращаемых элементов
-        'filter' => ['=ID' => 5] // array массив фильтров выборки
+    [
+        'order' => 'desc', // string ASC|DESC направление сортировки
+        'limit' => 2, // int количество возвращаемых элементов
+        'filter' => ['=ID' => 5], // array массив фильтров выборки
         'select' => ['ID', 'UF_NAME'] // array возвращаемый массив полей элемента
-    ]
+    ] // array (необязательный)
 );
 ```
 
@@ -24,9 +24,9 @@ $arElements = getHighloadElements(
 $bUpdate = updateHighloadElement(
     'tableName', // string название таблицы
     5, // int ID элемента
-    [ // array массив обновляемых полей со значениями
+    [
         'UF_NAME' => 'Новое имя'
-    ]
+    ] // array массив обновляемых полей со значениями
 );
 ```
 

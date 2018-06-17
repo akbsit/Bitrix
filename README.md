@@ -4,6 +4,8 @@
 
 [IBlock (Инфоблок)](iblock)
 
+[Mail (Почта)](mail)
+
 [Order (Заказ)](order)
 
 [Product (Товар)](product)

@@ -18,11 +18,11 @@ $iId = getIBlockId(
 ```php
 $arElements = getIBlockElements(
     3, // int ID инфоблока
-    [ // array (необязательный)
+    [
         'select' => ['ID', 'NAME'], // array возвращаемый массив полей элемента
         'limit' => 5, // int количество возвращаемых элементов
         'order' => 'desc' // string ASC|DESC направление сортировки
-    ]
+    ] // array (необязательный)
 );
 ```
 
