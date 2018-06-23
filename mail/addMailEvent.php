@@ -11,12 +11,12 @@
 function addMailEvent($sEventName = '', $sName = '', $sDescription = '', $sLang = 'ru')
 {
     if ($sEventName && $sName && $sDescription) {
-        $iEventId = (new \CEventType)->Add(array(
+        $iEventId = (new \CEventType)->Add([
             'EVENT_NAME' => $sEventName,
             'NAME' => $sName,
             'LID' => $sLang,
             'DESCRIPTION' => $sDescription
-        ));
+        ]);
 
         if (!empty($iEventId)) {
             return $iEventId;

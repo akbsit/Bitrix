@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Сниппет создает почтовый шаблон
+ * Сниппет создает почтовый шаблон для события
  * @param string $sEventName
  * @param string $sSubject
  * @param string $sMessage
  * @param array $arParams
  * @return bool
  */
-function addMailTemplate($sEventName = '', $sSubject = '', $sMessage = '', $arParams = array())
+function addMailTemplate($sEventName = '', $sSubject = '', $sMessage = '', $arParams = [])
 {
     if ($sEventName && $sSubject && $sMessage) {
         $sActive = !empty($arParams['active']) ? $arParams['active'] : 'Y';

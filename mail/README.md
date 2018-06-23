@@ -19,7 +19,7 @@ $iId = addMailEvent(
 
 ## addMailTemplate()
 
-Сниппет создает почтовый шаблон.
+Сниппет создает почтовый шаблон для события.
 
 ```php
 $iId = addMailTemplate(
