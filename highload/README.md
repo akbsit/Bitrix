@@ -1,3 +1,16 @@
+## getHighloadId()
+
+Сниппет получает индификатор highload-блока по названию таблицы.
+
+```php
+$iId = getHighloadId(
+    'table_name', // string название таблицы с элементами highload-блока
+    'TableName' // string название highload-блока (необязательный)
+);
+```
+
+При успешной отработке возвращает – **ID highload-блока** в другом случае – **0**.
+
 ## getHighloadElements()
 
 Сниппит получает список элементов highload-блока.
