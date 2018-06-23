@@ -4,7 +4,7 @@
 
 ```php
 $iId = getHighloadId(
-    'table_name', // string название таблицы с элементами highload-блока
+    'tableName', // string название таблицы
     'TableName' // string название highload-блока (необязательный)
 );
 ```
