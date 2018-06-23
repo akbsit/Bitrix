@@ -2,24 +2,20 @@
 
 /**
  * Сниппет получает набор свойств относящихся к заказу
- * @param array $arParams
+ * @param int $iOrderId
  * @return array
  */
-function getOrderProperties($arParams = [])
+function getOrderProperties($iOrderId = 0)
 {
-    if ($arParams && !empty($arParams['id'])) {
-        $iOrderId = (int)$arParams['id'];
+    if ($iOrderId && \CModule::IncludeModule('sale')) {
+        $arProps = \Bitrix\Sale\Internals\OrderPropsValueTable::getList([
+            'filter' => [
+                '=ORDER_ID' => $iOrderId
+            ],
+        ])->fetchAll();
 
-        if (\CModule::IncludeModule('sale')) {
-            $arProps = \Bitrix\Sale\Internals\OrderPropsValueTable::getList([
-                'filter' => [
-                    'ORDER_ID' => $iOrderId
-                ],
-            ])->fetchAll();
-
-            if (!empty($arProps)) {
-                return $arProps;
-            }
+        if (!empty($arProps)) {
+            return $arProps;
         }
     }
 
