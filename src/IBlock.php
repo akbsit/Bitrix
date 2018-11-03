@@ -3,7 +3,7 @@
  * Appointment: Информационный блок
  * Description: Набор полезных методов для информационных блоков
  * File: IBlock.php
- * Version: 0.0.1
+ * Version: 0.0.2
  * Author: Anton Kuleshov
  **/
 
@@ -20,7 +20,7 @@ Loader::includeModule('iblock');
 class IBlock
 {
     /**
-     * Индификатор инфоблока по его коду
+     * Индификатор инфоблока по его коду и типу
      * @param string $sCode
      * @param string $sType
      * @return int
@@ -36,7 +36,7 @@ class IBlock
                 $arFilter['=TYPE'] = $sType;
             }
 
-            $arIBlock = \CIBlock::GetList([], $arFilter)->fetch();
+            $arIBlock = \CIBlock::getList([], $arFilter)->fetch();
 
             if (!empty($arIBlock['ID'])) {
                 return $arIBlock['ID'];
@@ -55,7 +55,7 @@ class IBlock
     public static function getPropId($sCode = '', $iIBlockId = 0)
     {
         if ($sCode && $iIBlockId) {
-            $arProp = \CIBlockProperty::GetList([], [
+            $arProp = \CIBlockProperty::getList([], [
                 'CODE' => $sCode,
                 'IBLOCK_ID' => $iIBlockId
             ])->Fetch();
