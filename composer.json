@@ -13,5 +13,8 @@
         "psr-4": {
             "Falbar\\Bitrix\\": "src"
         }
+    },
+    "require": {
+        "php": "^7.1"
     }
 }
