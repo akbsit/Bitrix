@@ -3,7 +3,7 @@
  * Appointment: Почта
  * Description: Набор полезных методов для работы с почтой
  * File: Mail.php
- * Version: 0.0.1
+ * Version: 0.0.2
  * Author: Anton Kuleshov
  **/
 
@@ -26,15 +26,15 @@ class Mail
     public static function addEvent($sEventName = '', $sName = '', $sDescription = '', $sLang = 'ru')
     {
         if ($sEventName && $sName && $sDescription) {
-            $iEventId = \CEventType::add([
+            $iEventID = \CEventType::add([
                 'EVENT_NAME' => $sEventName,
                 'NAME' => $sName,
                 'LID' => $sLang,
                 'DESCRIPTION' => $sDescription
             ]);
 
-            if (!empty($iEventId)) {
-                return $iEventId;
+            if (!empty($iEventID)) {
+                return $iEventID;
             }
         }
 
@@ -60,7 +60,7 @@ class Mail
 
             $oCEventMessage = new \CEventMessage;
 
-            $iTemplateId = $oCEventMessage->add([
+            $iTemplateID = $oCEventMessage->add([
                 'ACTIVE' => $sActive,
                 'EVENT_NAME' => $sEventName,
                 'LID' => $arLID,
@@ -71,8 +71,8 @@ class Mail
                 'MESSAGE' => $sMessage
             ]);
 
-            if ($iTemplateId) {
-                return $iTemplateId;
+            if ($iTemplateID) {
+                return $iTemplateID;
             }
         }
 

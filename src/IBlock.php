@@ -3,7 +3,7 @@
  * Appointment: Информационный блок
  * Description: Набор полезных методов для информационных блоков
  * File: IBlock.php
- * Version: 0.0.2
+ * Version: 0.0.3
  * Author: Anton Kuleshov
  **/
 
@@ -25,7 +25,7 @@ class IBlock
      * @param string $sType
      * @return int
      */
-    public static function getId($sCode = '', $sType = '')
+    public static function getID($sCode = '', $sType = '')
     {
         if ($sCode) {
             $arFilter = [
@@ -49,15 +49,15 @@ class IBlock
     /**
      * Индификатор свойства по его символьному коду
      * @param string $sCode
-     * @param int $iIBlockId
+     * @param int $iIBlockID
      * @return int
      */
-    public static function getPropId($sCode = '', $iIBlockId = 0)
+    public static function getPropID($sCode = '', $iIBlockID = 0)
     {
-        if ($sCode && $iIBlockId) {
+        if ($sCode && $iIBlockID) {
             $arProp = \CIBlockProperty::getList([], [
                 'CODE' => $sCode,
-                'IBLOCK_ID' => $iIBlockId
+                'IBLOCK_ID' => $iIBlockID
             ])->Fetch();
 
             if (!empty($arProp['ID'])) {
@@ -70,21 +70,21 @@ class IBlock
 
     /**
      * Список элементов
-     * @param int $iIBlockId
+     * @param int $iIBlockID
      * @param array $arParams
      * @return array
      */
-    public static function getElements($iIBlockId = 0, $arParams = [])
+    public static function getElements($iIBlockID = 0, $arParams = [])
     {
         $arResult = [];
 
-        if ($iIBlockId) {
+        if ($iIBlockID) {
             $arOrder = !empty($arParams['order']) && strtoupper($arParams['order']) == 'DESC' ? ['ID' => 'DESC'] : ['ID' => 'ASC'];
             $arLimit = !empty($arParams['limit']) && is_numeric($arParams['limit']) ? ['nTopCount' => $arParams['limit']] : [];
             $arSelect = !empty($arParams['select']) && is_array($arParams['select']) ? $arParams['select'] : [];
 
             $oElement = \CIBlockElement::getList($arOrder, [
-                '=IBLOCK_ID' => $iIBlockId
+                '=IBLOCK_ID' => $iIBlockID
             ], false, $arLimit, $arSelect);
 
             while ($arElement = $oElement->fetch()) {

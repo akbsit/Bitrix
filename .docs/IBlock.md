@@ -4,9 +4,9 @@
 use \Falbar\Bitrix\IBlock;
 ```
 
-## getId
+## getID
 
-**getId(string $sCode = '', string $sType = '')**
+**getID(string $sCode = '', string $sType = '')**
 
 Метод получает индификатор инфоблока по его коду и типу.
 
@@ -19,16 +19,16 @@ use \Falbar\Bitrix\IBlock;
 
 * `ID инфоблока` / `0`.
 
-## getPropId
+## getPropID
 
-**getPropId(string $sCode = '', int $iIBlockId = 0)**
+**getPropID(string $sCode = '', int $iIBlockID = 0)**
 
 Метод получает индификатор свойства по его символьному коду.
 
 **Параметры**
 
 * `$sCode` - CODE свойства;
-* `$iIBlockId` - ID инфоблока.
+* `$iIBlockID` - ID инфоблока.
 
 **Возвращает**
 
@@ -36,13 +36,13 @@ use \Falbar\Bitrix\IBlock;
 
 ## getElements
 
-**getElements(int $iIBlockId = 0, array $arParams = [])**
+**getElements(int $iIBlockID = 0, array $arParams = [])**
 
 Метод получает список элементов инфоблока.
 
 **Параметры**
 
-* `$iIBlockId` - ID инфоблока;
+* `$iIBlockID` - ID инфоблока;
 * `$arParams` - массив с заданными параметрами (необязательный):
     * `select` - возвращаемый массив полей элемента;
     * `limit` - количество возвращаемых элементов;

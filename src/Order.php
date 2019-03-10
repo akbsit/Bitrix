@@ -3,7 +3,7 @@
  * Appointment: Заказ
  * Description: Набор полезных методов для работы с заказами
  * File: Order.php
- * Version: 0.0.1
+ * Version: 0.0.2
  * Author: Anton Kuleshov
  **/
 
@@ -22,25 +22,25 @@ class Order
 {
     /**
      * Добавляет существующие, но не заданное свойство к заказу
-     * @param int $iOrderId
+     * @param int $iOrderID
      * @param string $sPropCode
      * @param string $sPropValue
      * @return int
      */
-    public static function addProp($iOrderId = 0, $sPropCode = '', $sPropValue = '')
+    public static function addProp($iOrderID = 0, $sPropCode = '', $sPropValue = '')
     {
-        if ($iOrderId && $sPropCode) {
+        if ($iOrderID && $sPropCode) {
             if ($arProp = \CSaleOrderProps::getList([], ['=CODE' => $sPropCode])->Fetch()) {
-                $iPropId = \CSaleOrderPropsValue::add([
+                $iPropID = \CSaleOrderPropsValue::add([
                     'NAME' => $arProp['NAME'],
                     'CODE' => $arProp['CODE'],
                     'ORDER_PROPS_ID' => $arProp['ID'],
-                    'ORDER_ID' => $iOrderId,
+                    'ORDER_ID' => $iOrderID,
                     'VALUE' => $sPropValue ? $sPropValue : ''
                 ]);
 
-                if ($iPropId) {
-                    return $iPropId;
+                if ($iPropID) {
+                    return $iPropID;
                 }
             }
         }
@@ -50,28 +50,28 @@ class Order
 
     /**
      * Обновляет значение свойства заказа
-     * @param int $iOrderId
+     * @param int $iOrderID
      * @param string $sPropCode
      * @param string $sPropValue
      * @return int
      */
-    public static function updateProp($iOrderId = 0, $sPropCode = '', $sPropValue = '')
+    public static function updateProp($iOrderID = 0, $sPropCode = '', $sPropValue = '')
     {
-        if ($iOrderId && $sPropCode) {
+        if ($iOrderID && $sPropCode) {
             $arProp = OrderPropsValueTable::getList([
                 'filter' => [
-                    '=ORDER_ID' => $iOrderId,
+                    '=ORDER_ID' => $iOrderID,
                     '=CODE' => $sPropCode
                 ]
             ])->Fetch();
 
             if ($arProp) {
-                $iPropId = \CSaleOrderPropsValue::Update($arProp['ID'], [
+                $iPropID = \CSaleOrderPropsValue::Update($arProp['ID'], [
                     'VALUE' => $sPropValue ? $sPropValue : ''
                 ]);
 
-                if ($iPropId) {
-                    return $iPropId;
+                if ($iPropID) {
+                    return $iPropID;
                 }
             }
         }
@@ -81,15 +81,15 @@ class Order
 
     /**
      * Набор свойств относящихся к заказу
-     * @param int $iOrderId
+     * @param int $iOrderID
      * @return array
      */
-    public static function getOrderProps($iOrderId = 0)
+    public static function getOrderProps($iOrderID = 0)
     {
-        if ($iOrderId) {
+        if ($iOrderID) {
             $arProps = OrderPropsValueTable::getList([
                 'filter' => [
-                    '=ORDER_ID' => $iOrderId
+                    '=ORDER_ID' => $iOrderID
                 ],
             ])->fetchAll();
 

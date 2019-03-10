@@ -3,7 +3,7 @@
  * Appointment: Товар
  * Description: Набор полезных методов для работы с товарами
  * File: Product.php
- * Version: 0.0.1
+ * Version: 0.0.2
  * Author: Anton Kuleshov
  **/
 
@@ -21,20 +21,20 @@ class Product
 {
     /**
      * Получает цену на товар
-     * @param int $iProductId
+     * @param int $iProductID
      * @return array
      */
-    public static function getPrice($iProductId = 0)
+    public static function getPrice($iProductID = 0)
     {
         $arResult = [];
 
-        if ($iProductId) {
-            if ($arPrice = \CPrice::getList([], ['=PRODUCT_ID' => $iProductId])->fetch()) {
+        if ($iProductID) {
+            if ($arPrice = \CPrice::getList([], ['=PRODUCT_ID' => $iProductID])->fetch()) {
                 $arResult['CURRENCY'] = $arPrice['CURRENCY'];
                 $arResult['PRICE'] = $arPrice['PRICE'];
             }
 
-            if ($arDiscounts = \CCatalogDiscount::getDiscountByProduct($iProductId)) {
+            if ($arDiscounts = \CCatalogDiscount::getDiscountByProduct($iProductID)) {
                 $arResult['PRICE_DISCOUNT'] = \CCatalogProduct::countPriceWithDiscount($arPrice['PRICE'], $arPrice['CURRENCY'], $arDiscounts);
             }
         }

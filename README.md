@@ -8,15 +8,15 @@
 * Установка;
 * Документация:
     * [Highload](.docs/Highload.md) - методы для работы с хайлоадами:
-        * [getId](.docs/Highload.md#getId) - метод получает индификатор хайлоуд блока по названию и названию таблицы;
+        * [getID](.docs/Highload.md#getID) - метод получает индификатор хайлоуд блока по названию и названию таблицы;
         * [getClassName](.docs/Highload.md#getClassName) - метод получает название класса хайлоуд блока;
         * [add](.docs/Highload.md#add) - метод добавляет элемент хайлоуд блока;
         * [update](.docs/Highload.md#update) - метод обновляет значения полей хайлоуд блока;
         * [delete](.docs/Highload.md#delete) - метод удаляет элемент хайлоуд блока;
         * [getElements](.docs/Highload.md#getElements) - метод получает список элементов хайлоуд блока.
     * [IBlock](.docs/IBlock.md) - методы для работы с инфоблоками:
-        * [getId](.docs/IBlock.md#getId) - метод получает индификатор инфоблока по его коду и типу;
-        * [getPropId](.docs/IBlock.md#getPropId) - метод получает индификатор свойства по его символьному коду;
+        * [getID](.docs/IBlock.md#getID) - метод получает индификатор инфоблока по его коду и типу;
+        * [getPropID](.docs/IBlock.md#getPropID) - метод получает индификатор свойства по его символьному коду;
         * [getElements](.docs/IBlock.md#getElements) - метод получает список элементов инфоблока.
     * [Mail](.docs/Mail.md) - методы для работы с почтой:
         * [addEvent](.docs/Mail.md#addEvent) - метод создает почтовое событие;

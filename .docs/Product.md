@@ -6,13 +6,13 @@ use \Falbar\Bitrix\Product;
 
 ## getPrice
 
-**getPrice(int $iProductId = 0)**
+**getPrice(int $iProductID = 0)**
 
 Метод получает цену на товар.
 
 **Параметры**
 
-* `$iProductId` - ID товара.
+* `$iProductID` - ID товара.
 
 **Возвращает**
 

@@ -3,7 +3,7 @@
  * Appointment: Хайлоуд блок
  * Description: Набор полезных методов для хайлоуд блоков
  * File: Highload.php
- * Version: 0.0.1
+ * Version: 0.0.2
  * Author: Anton Kuleshov
  **/
 
@@ -26,7 +26,7 @@ class Highload
      * @param string $sDBName
      * @return int
      */
-    public static function getId($sName = '', $sDBName = '')
+    public static function getID($sName = '', $sDBName = '')
     {
         if ($sName && $sDBName) {
             $arHighload = HighloadBlockTable::getList([
@@ -47,13 +47,13 @@ class Highload
 
     /**
      * Название класса хайлоуда
-     * @param int $iHighloadId
+     * @param int $iHighloadID
      * @return string
      */
-    public static function getClassName($iHighloadId = 0)
+    public static function getClassName($iHighloadID = 0)
     {
-        if ($iHighloadId) {
-            $arHighload = HighloadBlockTable::getById($iHighloadId)->fetch();
+        if ($iHighloadID) {
+            $arHighload = HighloadBlockTable::getById($iHighloadID)->fetch();
 
             if ($arHighload) {
                 $oEntity = HighloadBlockTable::compileEntity($arHighload);
@@ -67,14 +67,14 @@ class Highload
 
     /**
      * Добавить элемент
-     * @param int $iHighloadId
+     * @param int $iHighloadID
      * @param array $arParams
      * @return int
      */
-    public static function add($iHighloadId = 0, $arParams = [])
+    public static function add($iHighloadID = 0, $arParams = [])
     {
-        if ($iHighloadId) {
-            $sClassName = self::getClassName($iHighloadId);
+        if ($iHighloadID) {
+            $sClassName = self::getClassName($iHighloadID);
 
             if ($sClassName) {
                 return $sClassName::add($arParams)->getId();
@@ -86,18 +86,18 @@ class Highload
 
     /**
      * Обновить элемент
-     * @param int $iHighloadId
-     * @param int $iHighloadElementId
+     * @param int $iHighloadID
+     * @param int $iHighloadElementID
      * @param array $arParams
      * @return bool
      */
-    public static function update($iHighloadId = 0, $iHighloadElementId = 0, $arParams = [])
+    public static function update($iHighloadID = 0, $iHighloadElementID = 0, $arParams = [])
     {
-        if ($iHighloadId && $iHighloadElementId && $arParams) {
-            $sClassName = self::getClassName($iHighloadId);
+        if ($iHighloadID && $iHighloadElementID && $arParams) {
+            $sClassName = self::getClassName($iHighloadID);
 
             if ($sClassName) {
-                return $sClassName::update($iHighloadElementId, $arParams)->isSuccess();
+                return $sClassName::update($iHighloadElementID, $arParams)->isSuccess();
             }
         }
 
@@ -106,17 +106,17 @@ class Highload
 
     /**
      * Удалить элемент
-     * @param int $iHighloadId
-     * @param int $iHighloadElementId
+     * @param int $iHighloadID
+     * @param int $iHighloadElementID
      * @return bool
      */
-    public static function delete($iHighloadId = 0, $iHighloadElementId = 0)
+    public static function delete($iHighloadID = 0, $iHighloadElementID = 0)
     {
-        if ($iHighloadId && $iHighloadElementId) {
-            $sClassName = self::getClassName($iHighloadId);
+        if ($iHighloadID && $iHighloadElementID) {
+            $sClassName = self::getClassName($iHighloadID);
 
             if ($sClassName) {
-                return $sClassName::delete($iHighloadElementId)->isSuccess();
+                return $sClassName::delete($iHighloadElementID)->isSuccess();
             }
         }
 
@@ -125,16 +125,16 @@ class Highload
 
     /**
      * Список элементов
-     * @param int $iHighloadId
+     * @param int $iHighloadID
      * @param array $arParams
      * @return array
      */
-    public static function getElements($iHighloadId = 0, $arParams = [])
+    public static function getElements($iHighloadID = 0, $arParams = [])
     {
         $arResult = [];
 
-        if ($iHighloadId) {
-            $sClassName = self::getClassName($iHighloadId);
+        if ($iHighloadID) {
+            $sClassName = self::getClassName($iHighloadID);
 
             if ($sClassName) {
                 $arFilter = !empty($arParams['filter']) && is_array($arParams['filter']) ? $arParams['filter'] : [];

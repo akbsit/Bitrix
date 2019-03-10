@@ -4,9 +4,9 @@
 use \Falbar\Bitrix\Highload;
 ```
 
-## getId
+## getID
 
-**getId(string $sName = '', string $sDBName = '')**
+**getID(string $sName = '', string $sDBName = '')**
 
 Метод получает индификатор хайлоуд блока по названию и названию таблицы.
 
@@ -21,13 +21,13 @@ use \Falbar\Bitrix\Highload;
 
 ## getClassName
 
-**getClassName(int $iHighloadId = 0)**
+**getClassName(int $iHighloadID = 0)**
 
 Метод получает название класса хайлоуд блока.
 
 **Параметры**
 
-* `$iHighloadId` - ID хайлоуд блока.
+* `$iHighloadID` - ID хайлоуд блока.
 
 **Возвращает**
 
@@ -35,13 +35,13 @@ use \Falbar\Bitrix\Highload;
 
 ## add
 
-**add(int $iHighloadId = 0, array $arParams = [])**
+**add(int $iHighloadID = 0, array $arParams = [])**
 
 Метод добавляет элемент хайлоуд блока.
 
 **Параметры**
 
-* `$iHighloadId` - ID хайлоуд блока;
+* `$iHighloadID` - ID хайлоуд блока;
 * `$arParams` - массив добавляемых полей со значениями (необязательный).
 
 **Возвращает**
@@ -60,14 +60,14 @@ use \Falbar\Bitrix\Highload;
 
 ## update
 
-**update(int $iHighloadId = 0, int $iHighloadElementId = 0, array $arParams = [])**
+**update(int $iHighloadID = 0, int $iHighloadElementID = 0, array $arParams = [])**
 
 Метод обновляет значения полей хайлоуд блока.
 
 **Параметры**
 
-* `$iHighloadId` - ID хайлоуд блока;
-* `$iHighloadElementId` - ID элемента;
+* `$iHighloadID` - ID хайлоуд блока;
+* `$iHighloadElementID` - ID элемента;
 * `$arParams` - массив обновляемых полей со значениями.
 
 **Возвращает**
@@ -86,14 +86,14 @@ use \Falbar\Bitrix\Highload;
 
 ## delete
 
-**delete(int $iHighloadId = 0, int $iHighloadElementId = 0)**
+**delete(int $iHighloadID = 0, int $iHighloadElementID = 0)**
 
 Метод удаляет элемент хайлоуд блока.
 
 **Параметры**
 
-* `$iHighloadId` - ID хайлоуд блока;
-* `$iHighloadElementId` - ID элемента.
+* `$iHighloadID` - ID хайлоуд блока;
+* `$iHighloadElementID` - ID элемента.
 
 **Возвращает**
 
@@ -101,13 +101,13 @@ use \Falbar\Bitrix\Highload;
 
 ## getElements
 
-**getElements(int $iHighloadId = 0, array $arParams = [])**
+**getElements(int $iHighloadID = 0, array $arParams = [])**
 
 Метод получает список элементов хайлоуд блока.
 
 **Параметры**
 
-* `$iHighloadId` - ID хайлоуд блока;
+* `$iHighloadID` - ID хайлоуд блока;
 * `$arParams` - массив с заданными параметрами (необязательный):
     * `order` - ASC | DESC направление сортировки;
     * `limit` - количество возвращаемых элементов;
