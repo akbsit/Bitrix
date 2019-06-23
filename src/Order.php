@@ -3,7 +3,7 @@
  * Appointment: Заказ
  * Description: Набор полезных методов для работы с заказами
  * File: Order.php
- * Version: 0.0.2
+ * Version: 0.0.3
  * Author: Anton Kuleshov
  **/
 
@@ -29,6 +29,8 @@ class Order
      */
     public static function addProp($iOrderID = 0, $sPropCode = '', $sPropValue = '')
     {
+        $iResult = 0;
+
         if ($iOrderID && $sPropCode) {
             if ($arProp = \CSaleOrderProps::getList([], ['=CODE' => $sPropCode])->Fetch()) {
                 $iPropID = \CSaleOrderPropsValue::add([
@@ -40,12 +42,12 @@ class Order
                 ]);
 
                 if ($iPropID) {
-                    return $iPropID;
+                    $iResult = $iPropID;
                 }
             }
         }
 
-        return 0;
+        return $iResult;
     }
 
     /**
@@ -54,9 +56,14 @@ class Order
      * @param string $sPropCode
      * @param string $sPropValue
      * @return int
+     * @throws \Bitrix\Main\ArgumentException
+     * @throws \Bitrix\Main\ObjectPropertyException
+     * @throws \Bitrix\Main\SystemException
      */
     public static function updateProp($iOrderID = 0, $sPropCode = '', $sPropValue = '')
     {
+        $iResult = 0;
+
         if ($iOrderID && $sPropCode) {
             $arProp = OrderPropsValueTable::getList([
                 'filter' => [
@@ -71,21 +78,26 @@ class Order
                 ]);
 
                 if ($iPropID) {
-                    return $iPropID;
+                    $iResult = $iPropID;
                 }
             }
         }
 
-        return 0;
+        return $iResult;
     }
 
     /**
      * Набор свойств относящихся к заказу
      * @param int $iOrderID
      * @return array
+     * @throws \Bitrix\Main\ArgumentException
+     * @throws \Bitrix\Main\ObjectPropertyException
+     * @throws \Bitrix\Main\SystemException
      */
-    public static function getOrderProps($iOrderID = 0)
+    public static function getProps($iOrderID = 0)
     {
+        $arResult = [];
+
         if ($iOrderID) {
             $arProps = OrderPropsValueTable::getList([
                 'filter' => [
@@ -94,10 +106,10 @@ class Order
             ])->fetchAll();
 
             if (!empty($arProps)) {
-                return $arProps;
+                $arResult = $arProps;
             }
         }
 
-        return [];
+        return $arResult;
     }
 }

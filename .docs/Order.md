@@ -36,9 +36,9 @@ use \Falbar\Bitrix\Order;
 
 * `ID обновленного свойства` / `0`.
 
-## getOrderProps
+## getProps
 
-**getOrderProps(int $iOrderID = 0)**
+**getProps(int $iOrderID = 0)**
 
 Метод получает набор свойств относящихся к заказу.
 
