@@ -7,38 +7,40 @@
 * Требования;
 * Установка;
 * Документация:
-    * Helper - набор полезных методов:
-        * [Helper](.docs/Helper/Helper.md):
-            * [isMainPage](.docs/Helper/Helper.md#isMainPage) - метод проверяет главную страницу;
-            * [isSection](.docs/Helper/Helper.md#isSection) - метод проверяет нахождение в разделе.
-        * [Validator](.docs/Helper/Validator.md):
-            * [clearString](.docs/Helper/Validator.md#clearString) - метод очищает строковые данные;
-            * [clearInt](.docs/Helper/Validator.md#clearInt) - метод очищает числовые данные.
-    * Highload - методы для работы с хайлоадами:
-        * [Highload](.docs/Highload/Highload.md):
-            * [getID](.docs/Highload/Highload.md#getID) - метод получает индификатор хайлоуд блока по названию и названию таблицы;
-            * [getClassName](.docs/Highload/Highload.md#getClassName) - метод получает название класса хайлоуд блока.
-        * [Element](.docs/Highload/Element.md):
-            * [add](.docs/Highload/Element.md#add) - метод добавляет элемент хайлоуд блока;
-            * [update](.docs/Highload/Element.md#update) - метод обновляет значения полей хайлоуд блока;
-            * [delete](.docs/Highload/Element.md#delete) - метод удаляет элемент хайлоуд блока;
-            * [getList](.docs/Highload/Element.md#getList) - метод получает список элементов хайлоуд блока.
-    * IBlock - методы для работы с инфоблоками:
-        * [IBlock](.docs/IBlock/IBlock.md):
-            * [getID](.docs/IBlock/IBlock.md#getID) - метод получает индификатор инфоблока по его коду и типу.
-        * [Element](.docs/IBlock/Element.md):
-            * [getList](.docs/IBlock/Element.md#getList) - метод получает список элементов инфоблока.
-        * [Prop](.docs/IBlock/Prop.md):
-            * [getID](.docs/IBlock/Prop.md#getID).
-    * [Mail](.docs/Mail.md) - методы для работы с почтой:
-        * [addEvent](.docs/Mail.md#addEvent) - метод создает почтовое событие;
-        * [addTemplate](.docs/Mail.md#addTemplate) - метод создает почтовый шаблон для события.
-    * [Product](.docs/Product.md) - методы для работы с товарами:
-        * [getPrice](.docs/Product.md#getPrice) - метод получает цену на товар.
-    * [Order](.docs/Order.md) - методы для работы с заказами:
-        * [addProp](.docs/Order.md#addProp) - метод добавляет существующие, но не заданное свойство к заказу;
-        * [updateProp](.docs/Order.md#updateProp) - метод обновляет значение свойства заказа;
-        * [getProps](.docs/Order.md#getOrderProps) - метод получает набор свойств относящихся к заказу.
+    * [Консольные команды](.docs/console.md);
+    * Вспомогательные классы:
+        * Helper - набор полезных методов:
+            * [Helper](.docs/Helper/Helper.md):
+                * [isMainPage](.docs/Helper/Helper.md#isMainPage) - метод проверяет главную страницу;
+                * [isSection](.docs/Helper/Helper.md#isSection) - метод проверяет нахождение в разделе.
+            * [Validator](.docs/Helper/Validator.md):
+                * [clearString](.docs/Helper/Validator.md#clearString) - метод очищает строковые данные;
+                * [clearInt](.docs/Helper/Validator.md#clearInt) - метод очищает числовые данные.
+        * Highload - методы для работы с хайлоадами:
+            * [Highload](.docs/Highload/Highload.md):
+                * [getID](.docs/Highload/Highload.md#getID) - метод получает индификатор хайлоуд блока по названию и названию таблицы;
+                * [getClassName](.docs/Highload/Highload.md#getClassName) - метод получает название класса хайлоуд блока.
+            * [Element](.docs/Highload/Element.md):
+                * [add](.docs/Highload/Element.md#add) - метод добавляет элемент хайлоуд блока;
+                * [update](.docs/Highload/Element.md#update) - метод обновляет значения полей хайлоуд блока;
+                * [delete](.docs/Highload/Element.md#delete) - метод удаляет элемент хайлоуд блока;
+                * [getList](.docs/Highload/Element.md#getList) - метод получает список элементов хайлоуд блока.
+        * IBlock - методы для работы с инфоблоками:
+            * [IBlock](.docs/IBlock/IBlock.md):
+                * [getID](.docs/IBlock/IBlock.md#getID) - метод получает индификатор инфоблока по его коду и типу.
+            * [Element](.docs/IBlock/Element.md):
+                * [getList](.docs/IBlock/Element.md#getList) - метод получает список элементов инфоблока.
+            * [Prop](.docs/IBlock/Prop.md):
+                * [getID](.docs/IBlock/Prop.md#getID).
+        * [Mail](.docs/Mail.md) - методы для работы с почтой:
+            * [addEvent](.docs/Mail.md#addEvent) - метод создает почтовое событие;
+            * [addTemplate](.docs/Mail.md#addTemplate) - метод создает почтовый шаблон для события.
+        * [Product](.docs/Product.md) - методы для работы с товарами:
+            * [getPrice](.docs/Product.md#getPrice) - метод получает цену на товар.
+        * [Order](.docs/Order.md) - методы для работы с заказами:
+            * [addProp](.docs/Order.md#addProp) - метод добавляет существующие, но не заданное свойство к заказу;
+            * [updateProp](.docs/Order.md#updateProp) - метод обновляет значение свойства заказа;
+            * [getProps](.docs/Order.md#getOrderProps) - метод получает набор свойств относящихся к заказу.
 * Статья.
 
 ## Требования
