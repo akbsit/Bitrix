@@ -3,11 +3,14 @@
  * Appointment: Помощники
  * Description: Набор полезных методов
  * File: Helper.php
- * Version: 0.0.1
+ * Version: 0.0.2
  * Author: Anton Kuleshov
  **/
 
 namespace Falbar\Bitrix\Helper;
+
+use \Bitrix\Main\IO\File;
+use \Bitrix\Main\Application;
 
 /**
  * Class Helper
@@ -38,5 +41,35 @@ class Helper
         }
 
         return $bResult;
+    }
+
+    /**
+     * Получаем содержимое SVG файла
+     * @param string $sName
+     * @param string $sPath
+     * @return string
+     */
+    public static function getSVGByName($sName, $sPath = '/local/svg/')
+    {
+        $sResult = '';
+
+        try {
+            $oFile = new File(Application::getDocumentRoot() . $sPath . $sName . '.svg');
+            $sResult = $oFile->getContents();
+        } catch (\Exception $e) {
+            echo $e->getMessage();
+        }
+
+        return $sResult;
+    }
+
+    /**
+     * Отображаем SVG
+     * @param string $sName
+     * @param string $sPath
+     */
+    public static function printSVGByName($sName, $sPath = '/local/svg/')
+    {
+        echo static::getSVGByName($sName, $sPath);
     }
 }

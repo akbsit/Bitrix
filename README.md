@@ -12,7 +12,9 @@
         * Helper - набор полезных методов:
             * [Helper](.docs/Helper/Helper.md):
                 * [isMainPage](.docs/Helper/Helper.md#isMainPage) - метод проверяет главную страницу;
-                * [isSection](.docs/Helper/Helper.md#isSection) - метод проверяет нахождение в разделе.
+                * [isSection](.docs/Helper/Helper.md#isSection) - метод проверяет нахождение в разделе;
+                * [getSVGByName](.docs/Helper/Helper.md#getSVGByName) - метод получает содержимое SVG файла;
+                * [printSVGByName](.docs/Helper/Helper.md#printSVGByName) - метод отображает SVG.
             * [Validator](.docs/Helper/Validator.md):
                 * [clearString](.docs/Helper/Validator.md#clearString) - метод очищает строковые данные;
                 * [clearInt](.docs/Helper/Validator.md#clearInt) - метод очищает числовые данные.
