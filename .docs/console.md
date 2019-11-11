@@ -12,6 +12,12 @@ php console bitrix:cache:size
 php console bitrix:cache:clear
 ```
 
+Команда создает скелет компонента:
+
+```
+php console bitrix:create:component
+```
+
 ## Подключение консоли
 
 Для того, чтобы подключить консоль и пользоваться командами, необходимо создать файл `console` в папке с файлом `composer.json` с содержимым:
@@ -42,6 +48,7 @@ try {
 
     $oApplication->add(new \Falbar\Bitrix\Console\CacheSizeCommand());
     $oApplication->add(new \Falbar\Bitrix\Console\CacheClearCommand());
+    $oApplication->add(new \Falbar\Bitrix\Console\CreateComponentCommand());
 
     $oApplication->run();
 } catch (\Exception $oError) {

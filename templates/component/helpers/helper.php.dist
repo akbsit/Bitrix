@@ -1,0 +1,11 @@
+<?php
+
+namespace {{ ROOT_NAMESPACE }}\{{ COMPONENT_CLASS_NAME }}\Helpers;
+
+/**
+ * Class Helper
+ * @package {{ ROOT_NAMESPACE }}\{{ COMPONENT_CLASS_NAME }}\Helpers
+ */
+class Helper
+{
+}
