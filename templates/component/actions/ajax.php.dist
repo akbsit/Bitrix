@@ -1,0 +1,32 @@
+<?php
+
+namespace {{ ROOT_NAMESPACE }}\{{ COMPONENT_CLASS_NAME }}\Actions;
+
+use {{ ROOT_NAMESPACE }}\{{ COMPONENT_CLASS_NAME }}\{{ COMPONENT_CLASS_NAME }};
+
+/**
+ * Class Ajax
+ * @package {{ ROOT_NAMESPACE }}\{{ COMPONENT_CLASS_NAME }}\Actions
+ */
+class Ajax extends {{ COMPONENT_CLASS_NAME }}
+{
+    /**
+     * Ajax constructor.
+     * @param \CBitrixComponent $oComponent
+     * @return bool
+     */
+    public function __construct(\CBitrixComponent $oComponent)
+    {
+        parent::__construct($oComponent);
+
+        return true;
+    }
+
+    /**
+     * @return bool
+     */
+    protected function do()
+    {
+        return true;
+    }
+}

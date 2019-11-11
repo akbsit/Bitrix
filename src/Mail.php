@@ -3,7 +3,7 @@
  * Appointment: Почта
  * Description: Набор полезных методов для работы с почтой
  * File: Mail.php
- * Version: 0.0.2
+ * Version: 0.0.3
  * Author: Anton Kuleshov
  **/
 
@@ -25,6 +25,8 @@ class Mail
      */
     public static function addEvent($sEventName = '', $sName = '', $sDescription = '', $sLang = 'ru')
     {
+        $iResult = 0;
+
         if ($sEventName && $sName && $sDescription) {
             $iEventID = \CEventType::add([
                 'EVENT_NAME' => $sEventName,
@@ -34,11 +36,11 @@ class Mail
             ]);
 
             if (!empty($iEventID)) {
-                return $iEventID;
+                $iResult = $iEventID;
             }
         }
 
-        return 0;
+        return $iResult;
     }
 
     /**
@@ -51,6 +53,8 @@ class Mail
      */
     public static function addTemplate($sEventName = '', $sSubject = '', $sMessage = '', $arParams = [])
     {
+        $iResult = 0;
+
         if ($sEventName && $sSubject && $sMessage) {
             $sActive = !empty($arParams['active']) ? $arParams['active'] : 'Y';
             $arLID = !empty($arParams['lid']) && is_array($arParams['lid']) ? $arParams['lid'] : ['s1'];
@@ -72,10 +76,10 @@ class Mail
             ]);
 
             if ($iTemplateID) {
-                return $iTemplateID;
+                $iResult = $iTemplateID;
             }
         }
 
-        return 0;
+        return $iResult;
     }
 }

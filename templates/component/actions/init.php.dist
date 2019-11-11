@@ -1,0 +1,34 @@
+<?php
+
+namespace {{ ROOT_NAMESPACE }}\{{ COMPONENT_CLASS_NAME }}\Actions;
+
+use {{ ROOT_NAMESPACE }}\{{ COMPONENT_CLASS_NAME }}\{{ COMPONENT_CLASS_NAME }};
+
+/**
+ * Class Init
+ * @package {{ ROOT_NAMESPACE }}\{{ COMPONENT_CLASS_NAME }}\Actions
+ */
+class Init extends {{ COMPONENT_CLASS_NAME }}
+{
+    /**
+     * Init constructor.
+     * @param \CBitrixComponent $oComponent
+     * @return bool
+     */
+    public function __construct(\CBitrixComponent $oComponent)
+    {
+        parent::__construct($oComponent);
+
+        return true;
+    }
+
+    /**
+     * @return bool
+     */
+    protected function do()
+    {
+        $this->includeComponentTemplate();
+
+        return true;
+    }
+}
