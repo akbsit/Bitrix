@@ -36,7 +36,7 @@
             * `::addProp($iOrderID = 0, $sPropCode = '', $sPropValue = '')` - метод добавляет существующие, но не заданное свойство к заказу;
             * `::updateProp($iOrderID = 0, $sPropCode = '', $sPropValue = '')` - метод обновляет значение свойства заказа;
             * `::getProps($iOrderID = 0)` - метод получает набор свойств относящихся к заказу.
-* Статья.
+* Статьи.
 
 ## Требования
 
@@ -57,6 +57,7 @@ composer require falbar/bitrix "1.*"
 require_once($_SERVER['DOCUMENT_ROOT'] . '/local/vendor/autoload.php');
 ```
 
-## Статья
+## Статьи
 
-[Добавление и обновление свойств в заказе с использованием Битрикс API](http://falbar.ru/article/dobavlenie-i-obnovlenie-svojstv-v-zakaze-s-ispolzovaniem-bitriks-api)
+* [Добавление и обновление свойств в заказе с использованием Битрикс API](http://falbar.ru/article/dobavlenie-i-obnovlenie-svojstv-v-zakaze-s-ispolzovaniem-bitriks-api);
+* [Битрикс компонент](http://falbar.ru/article/bitriks-komponent).
