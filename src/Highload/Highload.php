@@ -3,7 +3,7 @@
  * Appointment: Хайлоуд блок
  * Description: Набор полезных методов для хайлоуд блоков
  * File: Highload.php
- * Version: 0.0.3
+ * Version: 0.0.4
  * Author: Anton Kuleshov
  **/
 
@@ -22,8 +22,8 @@ class Highload
 {
     /**
      * Индификатор хайлоуд блока по названию и названию таблицы
-     * @param string $sName
-     * @param string $sDBName
+     * @param string $sName Название хайлоуд блока
+     * @param string $sDBName Название таблицы
      * @return int
      * @throws \Bitrix\Main\ArgumentException
      * @throws \Bitrix\Main\ObjectPropertyException
@@ -53,7 +53,7 @@ class Highload
     /**
      * Название класса хайлоуда
      * @param int $iHighloadID
-     * @return string
+     * @return string ID хайлоуд блока
      * @throws \Bitrix\Main\ArgumentException
      * @throws \Bitrix\Main\ObjectPropertyException
      * @throws \Bitrix\Main\SystemException

@@ -3,7 +3,7 @@
  * Appointment: Свойства информационного блока
  * Description: Набор полезных методов для работы со свойствами
  * File: Prop.php
- * Version: 0.0.1
+ * Version: 0.0.2
  * Author: Anton Kuleshov
  **/
 
@@ -26,9 +26,9 @@ class Prop
 
     /**
      * Индификатор свойства по его символьному коду
-     * @param int $iIBlockID
-     * @param string $sCode
-     * @param string $sType
+     * @param int $iIBlockID ID инфоблока
+     * @param string $sCode CODE свойства
+     * @param string $sType Тип свойства
      * @return int
      */
     public static function getID($iIBlockID = 0, $sCode = '', $sType = self::PROP_STRING)

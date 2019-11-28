@@ -3,7 +3,7 @@
  * Appointment: Почта
  * Description: Набор полезных методов для работы с почтой
  * File: Mail.php
- * Version: 0.0.3
+ * Version: 0.0.4
  * Author: Anton Kuleshov
  **/
 
@@ -17,10 +17,10 @@ class Mail
 {
     /**
      * Создает почтовое событие
-     * @param string $sEventName
-     * @param string $sName
-     * @param string $sDescription
-     * @param string $sLang
+     * @param string $sEventName ID почтового события
+     * @param string $sName Заголовок почтового события
+     * @param string $sDescription Описание задающее поля почтового события
+     * @param string $sLang Язык (необязательный)
      * @return int
      */
     public static function addEvent($sEventName = '', $sName = '', $sDescription = '', $sLang = 'ru')
@@ -45,10 +45,17 @@ class Mail
 
     /**
      * Создает почтовый шаблон для события
-     * @param string $sEventName
-     * @param string $sSubject
-     * @param string $sMessage
-     * @param array $arParams
+     * @param string $sEventName ID почтового события
+     * @param string $sSubject Заголовок сообщения
+     * @param string $sMessage Тело почтового сообщения
+     * @param array $arParams Массив с заданными параметрами (необязательный)
+     * [
+     *     'active' => 'Y', Флаг активности почтового шаблона
+     *     'lid' => ['s1'], IDs сайтов
+     *     'mail-from' => '#EMAIL_FROM#', Почта от кого
+     *     'mail-to' => '#EMAIL_TO#' Почта кому,
+     *     'body-type' => 'text' Тип тела почтового сообщения
+     * ]
      * @return bool
      */
     public static function addTemplate($sEventName = '', $sSubject = '', $sMessage = '', $arParams = [])

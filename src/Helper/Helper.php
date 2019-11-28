@@ -3,7 +3,7 @@
  * Appointment: Помощники
  * Description: Набор полезных методов
  * File: Helper.php
- * Version: 0.0.2
+ * Version: 0.0.3
  * Author: Anton Kuleshov
  **/
 
@@ -29,7 +29,7 @@ class Helper
 
     /**
      * Проверяем нахождение в разделе
-     * @param string $sSection
+     * @param string $sSection Раздел
      * @return bool
      */
     public static function isSection($sSection = '')
@@ -45,8 +45,8 @@ class Helper
 
     /**
      * Получаем содержимое SVG файла
-     * @param string $sName
-     * @param string $sPath
+     * @param string $sName Название файла
+     * @param string $sPath Путь до файла
      * @return string
      */
     public static function getSVGByName($sName, $sPath = '/local/svg/')
@@ -65,8 +65,8 @@ class Helper
 
     /**
      * Отображаем SVG
-     * @param string $sName
-     * @param string $sPath
+     * @param string $sName Название файла
+     * @param string $sPath Путь до файла
      */
     public static function printSVGByName($sName, $sPath = '/local/svg/')
     {

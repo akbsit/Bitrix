@@ -3,7 +3,7 @@
  * Appointment: Товар
  * Description: Набор полезных методов для работы с товарами
  * File: Product.php
- * Version: 0.0.2
+ * Version: 0.0.3
  * Author: Anton Kuleshov
  **/
 
@@ -21,7 +21,7 @@ class Product
 {
     /**
      * Получает цену на товар
-     * @param int $iProductID
+     * @param int $iProductID ID товара
      * @return array
      */
     public static function getPrice($iProductID = 0)

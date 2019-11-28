@@ -3,7 +3,7 @@
  * Appointment: Хайлоуд элемент
  * Description: Набор полезных методов для хайлоуд элементов
  * File: Element.php
- * Version: 0.0.1
+ * Version: 0.0.2
  * Author: Anton Kuleshov
  **/
 
@@ -17,8 +17,14 @@ class Element
 {
     /**
      * Список элементов
-     * @param int $iHighloadID
-     * @param array $arParams
+     * @param int $iHighloadID ID хайлоуд блока
+     * @param array $arParams Массив с заданными параметрами (необязательный)
+     * [
+     *     'order' => 'desc', Направление сортировки (необязательный, по умолчанию DESC по ID)
+     *     'limit' => 2, Количество возвращаемых элементов
+     *     'filter' => ['=ID' => 5], Массив фильтров выборки
+     *     'select' => ['ID', 'UF_NAME'] Возвращаемый массив полей элемента
+     * ]
      * @return array
      * @throws \Bitrix\Main\ArgumentException
      * @throws \Bitrix\Main\ObjectPropertyException
@@ -55,8 +61,13 @@ class Element
 
     /**
      * Добавить элемент
-     * @param int $iHighloadID
-     * @param array $arParams
+     * @param int $iHighloadID ID хайлоуд блока
+     * @param array $arParams Массив добавляемых полей со значениями (необязательный)
+     * [
+     *     'UF_PARAM_NAME_1' => 'UF_PARAM_VALUE_1',
+     *     'UF_PARAM_NAME_2' => 'UF_PARAM_VALUE_2',
+     *     'UF_PARAM_NAME_3' => 'UF_PARAM_VALUE_3'
+     * ]
      * @return int
      * @throws \Bitrix\Main\ArgumentException
      * @throws \Bitrix\Main\ObjectPropertyException
@@ -79,9 +90,14 @@ class Element
 
     /**
      * Обновить элемент
-     * @param int $iHighloadID
-     * @param int $iHighloadElementID
-     * @param array $arParams
+     * @param int $iHighloadID ID хайлоуд блока
+     * @param int $iHighloadElementID ID элемента
+     * @param array $arParams Массив обновляемых полей со значениями
+     * [
+     *     'UF_PARAM_NAME_1' => 'UF_PARAM_VALUE_1',
+     *     'UF_PARAM_NAME_2' => 'UF_PARAM_VALUE_2',
+     *     'UF_PARAM_NAME_3' => 'UF_PARAM_VALUE_3'
+     * ]
      * @return bool
      * @throws \Bitrix\Main\ArgumentException
      * @throws \Bitrix\Main\ObjectPropertyException
@@ -104,8 +120,8 @@ class Element
 
     /**
      * Удалить элемент
-     * @param int $iHighloadID
-     * @param int $iHighloadElementID
+     * @param int $iHighloadID ID хайлоуд блока
+     * @param int $iHighloadElementID ID элемента
      * @return bool
      * @throws \Bitrix\Main\ArgumentException
      * @throws \Bitrix\Main\ObjectPropertyException

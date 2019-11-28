@@ -3,7 +3,7 @@
  * Appointment: Информационный блок
  * Description: Набор полезных методов для информационных блоков
  * File: IBlock.php
- * Version: 0.0.4
+ * Version: 0.0.5
  * Author: Anton Kuleshov
  **/
 
@@ -21,8 +21,8 @@ class IBlock
 {
     /**
      * Индификатор инфоблока по его коду и типу
-     * @param string $sCode
-     * @param string $sType
+     * @param string $sCode CODE инфоблока
+     * @param string $sType ID типа инфоблока (необязательный)
      * @return int
      */
     public static function getID($sCode = '', $sType = '')
