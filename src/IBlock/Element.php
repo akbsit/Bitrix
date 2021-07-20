@@ -3,7 +3,7 @@
  * Appointment: Элемент информационного блока
  * Description: Набор полезных методов для элемента информационного блока
  * File: Element.php
- * Version: 0.0.1
+ * Version: 0.0.2
  * Author: Anton Kuleshov
  **/
 
@@ -31,9 +31,15 @@ class Element
 
     /**
      * Список элементов
-     * @param int $iIBlockID
-     * @param array $arParams
-     * @param string $sGetList
+     * @param int $iIBlockID ID инфоблока
+     * @param array $arParams Массив с заданными параметрами (необязательный)
+     * [
+     *     'select' => ['ID', 'NAME'], Возвращаемый массив полей элемента;
+     *     'limit' => 5, Количество возвращаемых элементов
+     *     'filter' => [], Массив фильтров выборки
+     *     'order' => 'desc' Направление сортировки (необязательный, по умолчанию DESC по ID)
+     * ]
+     * @param string $sGetList Тип получения выборки (Element::GETLIST_FETCH, Element::GETLIST_GETNEXT)
      * @return array
      */
     public static function getList($iIBlockID = 0, $arParams = [], $sGetList = self::GETLIST_FETCH)

@@ -3,7 +3,7 @@
  * Appointment: Валидация
  * Description: Набор полезных методов для валидации
  * File: Validator.php
- * Version: 0.0.1
+ * Version: 0.0.2
  * Author: Anton Kuleshov
  **/
 
@@ -17,8 +17,8 @@ class Validator
 {
     /**
      * Очистка строковых данных
-     * @param $string
-     * @param array $arExclude
+     * @param $string Строка или массив со строковыми данными
+     * @param array $arExclude Массив исключений, если передан массив
      * @return array|string
      */
     public static function clearString($string, $arExclude = [])
@@ -40,8 +40,8 @@ class Validator
 
     /**
      * Очистка числовых данных
-     * @param $int
-     * @param array $arExclude
+     * @param $int Число или массив с числовыми данными
+     * @param array $arExclude Массив исключений, если передан массив
      * @return array|int
      */
     public static function clearInt($int, $arExclude = [])

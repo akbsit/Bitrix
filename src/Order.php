@@ -3,7 +3,7 @@
  * Appointment: Заказ
  * Description: Набор полезных методов для работы с заказами
  * File: Order.php
- * Version: 0.0.3
+ * Version: 0.0.4
  * Author: Anton Kuleshov
  **/
 
@@ -22,9 +22,9 @@ class Order
 {
     /**
      * Добавляет существующие, но не заданное свойство к заказу
-     * @param int $iOrderID
-     * @param string $sPropCode
-     * @param string $sPropValue
+     * @param int $iOrderID ID заказа
+     * @param string $sPropCode CODE свойства
+     * @param string $sPropValue VALUE свойства (необязательный)
      * @return int
      */
     public static function addProp($iOrderID = 0, $sPropCode = '', $sPropValue = '')
@@ -52,9 +52,9 @@ class Order
 
     /**
      * Обновляет значение свойства заказа
-     * @param int $iOrderID
-     * @param string $sPropCode
-     * @param string $sPropValue
+     * @param int $iOrderID ID заказа
+     * @param string $sPropCode CODE свойства
+     * @param string $sPropValue VALUE свойства (необязательный)
      * @return int
      * @throws \Bitrix\Main\ArgumentException
      * @throws \Bitrix\Main\ObjectPropertyException
@@ -88,7 +88,7 @@ class Order
 
     /**
      * Набор свойств относящихся к заказу
-     * @param int $iOrderID
+     * @param int $iOrderID ID заказа
      * @return array
      * @throws \Bitrix\Main\ArgumentException
      * @throws \Bitrix\Main\ObjectPropertyException
