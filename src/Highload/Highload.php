@@ -1,13 +1,4 @@
-<?php
-/**
- * Appointment: Хайлоуд блок
- * Description: Набор полезных методов для хайлоуд блоков
- * File: Highload.php
- * Version: 0.0.4
- * Author: Anton Kuleshov
- **/
-
-namespace Falbar\Bitrix\Highload;
+<?php namespace Akbsit\Bitrix\Highload;
 
 use \Bitrix\Main\Loader;
 use \Bitrix\Highloadblock\HighloadBlockTable;
@@ -16,14 +7,13 @@ Loader::includeModule('highloadblock');
 
 /**
  * Class Highload
- * @package Falbar\Bitrix\Highload
+ * @package Akbsit\Bitrix\Highload
  */
 class Highload
 {
     /**
-     * Индификатор хайлоуд блока по названию и названию таблицы
-     * @param string $sName Название хайлоуд блока
-     * @param string $sDBName Название таблицы
+     * @param string $sName
+     * @param string $sDBName
      * @return int
      * @throws \Bitrix\Main\ArgumentException
      * @throws \Bitrix\Main\ObjectPropertyException
@@ -51,9 +41,8 @@ class Highload
     }
 
     /**
-     * Название класса хайлоуда
      * @param int $iHighloadID
-     * @return string ID хайлоуд блока
+     * @return string
      * @throws \Bitrix\Main\ArgumentException
      * @throws \Bitrix\Main\ObjectPropertyException
      * @throws \Bitrix\Main\SystemException

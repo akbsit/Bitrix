@@ -1,13 +1,4 @@
-<?php
-/**
- * Appointment: Свойства информационного блока
- * Description: Набор полезных методов для работы со свойствами
- * File: Prop.php
- * Version: 0.0.2
- * Author: Anton Kuleshov
- **/
-
-namespace Falbar\Bitrix\IBlock;
+<?php namespace Akbsit\Bitrix\IBlock;
 
 use \Bitrix\Main\Loader;
 
@@ -15,20 +6,16 @@ Loader::includeModule('iblock');
 
 /**
  * Class Prop
- * @package Falbar\Bitrix\IBlock
+ * @package Akbsit\Bitrix\IBlock
  */
 class Prop
 {
-    /**
-     * Тип свойства
-     */
     const PROP_STRING = 'S';
 
     /**
-     * Индификатор свойства по его символьному коду
-     * @param int $iIBlockID ID инфоблока
-     * @param string $sCode CODE свойства
-     * @param string $sType Тип свойства
+     * @param int $iIBlockID
+     * @param string $sCode
+     * @param string $sType
      * @return int
      */
     public static function getID($iIBlockID = 0, $sCode = '', $sType = self::PROP_STRING)

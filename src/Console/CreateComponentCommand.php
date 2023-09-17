@@ -1,12 +1,4 @@
-<?php
-/**
- * Appointment: Создание компонента
- * File: CreateComponentCommand.php
- * Version: 0.0.1
- * Author: Anton Kuleshov
- **/
-
-namespace Falbar\Bitrix\Console;
+<?php namespace Akbsit\Bitrix\Console;
 
 use \Symfony\Component\Console\Output\OutputInterface;
 use \Symfony\Component\Console\Input\InputInterface;
@@ -18,7 +10,7 @@ use \Bitrix\Main\Loader;
 
 /**
  * Class CreateComponentCommand
- * @package Falbar\Bitrix\Console
+ * @package Akbsit\Bitrix\Console
  */
 class CreateComponentCommand extends Command
 {

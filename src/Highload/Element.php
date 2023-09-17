@@ -1,24 +1,14 @@
-<?php
-/**
- * Appointment: Хайлоуд элемент
- * Description: Набор полезных методов для хайлоуд элементов
- * File: Element.php
- * Version: 0.0.2
- * Author: Anton Kuleshov
- **/
-
-namespace Falbar\Bitrix\Highload;
+<?php namespace Akbsit\Bitrix\Highload;
 
 /**
  * Class Element
- * @package Falbar\Bitrix\Highload
+ * @package Akbsit\Bitrix\Highload
  */
 class Element
 {
     /**
-     * Список элементов
-     * @param int $iHighloadID ID хайлоуд блока
-     * @param array $arParams Массив с заданными параметрами (необязательный)
+     * @param int $iHighloadID
+     * @param array $arParams
      * [
      *     'order' => 'desc', Направление сортировки (необязательный, по умолчанию DESC по ID)
      *     'limit' => 2, Количество возвращаемых элементов
@@ -60,9 +50,8 @@ class Element
     }
 
     /**
-     * Добавить элемент
-     * @param int $iHighloadID ID хайлоуд блока
-     * @param array $arParams Массив добавляемых полей со значениями (необязательный)
+     * @param int $iHighloadID
+     * @param array $arParams
      * [
      *     'UF_PARAM_NAME_1' => 'UF_PARAM_VALUE_1',
      *     'UF_PARAM_NAME_2' => 'UF_PARAM_VALUE_2',
@@ -89,10 +78,9 @@ class Element
     }
 
     /**
-     * Обновить элемент
-     * @param int $iHighloadID ID хайлоуд блока
-     * @param int $iHighloadElementID ID элемента
-     * @param array $arParams Массив обновляемых полей со значениями
+     * @param int $iHighloadID
+     * @param int $iHighloadElementID
+     * @param array $arParams
      * [
      *     'UF_PARAM_NAME_1' => 'UF_PARAM_VALUE_1',
      *     'UF_PARAM_NAME_2' => 'UF_PARAM_VALUE_2',
@@ -119,9 +107,8 @@ class Element
     }
 
     /**
-     * Удалить элемент
-     * @param int $iHighloadID ID хайлоуд блока
-     * @param int $iHighloadElementID ID элемента
+     * @param int $iHighloadID
+     * @param int $iHighloadElementID
      * @return bool
      * @throws \Bitrix\Main\ArgumentException
      * @throws \Bitrix\Main\ObjectPropertyException

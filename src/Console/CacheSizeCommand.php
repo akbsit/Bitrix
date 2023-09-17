@@ -1,12 +1,4 @@
-<?php
-/**
- * Appointment: Определение размера кеша
- * File: CacheSizeCommand.php
- * Version: 0.0.1
- * Author: Roman Shvikov
- **/
-
-namespace Falbar\Bitrix\Console;
+<?php namespace Akbsit\Bitrix\Console;
 
 use \Symfony\Component\Console\Command\Command;
 use \Symfony\Component\Console\Input\InputInterface;
@@ -14,7 +6,7 @@ use \Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Class CacheSizeCommand
- * @package Falbar\Bitrix\Console
+ * @package Akbsit\Bitrix\Console
  */
 class CacheSizeCommand extends Command
 {

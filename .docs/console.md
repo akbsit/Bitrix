@@ -1,26 +1,26 @@
-# Консольные команды
+# Console commands
 
-Команда возвращает размер кеша сайта:
+Command returns the size of the site cache:
 
 ```
 php console bitrix:cache:size
 ```
 
-Команда по очистке кеша сайта:
+The site cache cleanup command:
 
 ```
 php console bitrix:cache:clear
 ```
 
-Команда создает скелет компонента:
+Command creates a skeleton of the component:
 
 ```
 php console bitrix:create:component
 ```
 
-## Подключение консоли
+## Connecting console
 
-Для того, чтобы подключить консоль и пользоваться командами, необходимо создать файл `console` в папке с файлом `composer.json` с содержимым:
+In order to connect the console and use commands, you need to create a `console` file in the folder with the `composer.json` file with the contents:
 
 ```php
 #!/usr/bin/env php
@@ -46,9 +46,9 @@ use Symfony\Component\Console\Application;
 try {
     $oApplication = new Application();
 
-    $oApplication->add(new \Falbar\Bitrix\Console\CacheSizeCommand());
-    $oApplication->add(new \Falbar\Bitrix\Console\CacheClearCommand());
-    $oApplication->add(new \Falbar\Bitrix\Console\CreateComponentCommand());
+    $oApplication->add(new \Akbsit\Bitrix\Console\CacheSizeCommand());
+    $oApplication->add(new \Akbsit\Bitrix\Console\CacheClearCommand());
+    $oApplication->add(new \Akbsit\Bitrix\Console\CreateComponentCommand());
 
     $oApplication->run();
 } catch (\Exception $oError) {

@@ -1,13 +1,4 @@
-<?php
-/**
- * Appointment: Заказ
- * Description: Набор полезных методов для работы с заказами
- * File: Order.php
- * Version: 0.0.4
- * Author: Anton Kuleshov
- **/
-
-namespace Falbar\Bitrix;
+<?php namespace Akbsit\Bitrix;
 
 use \Bitrix\Main\Loader;
 use \Bitrix\Sale\Internals\OrderPropsValueTable;
@@ -16,15 +7,14 @@ Loader::includeModule('sale');
 
 /**
  * Class Order
- * @package Falbar\Bitrix
+ * @package Akbsit\Bitrix
  */
 class Order
 {
     /**
-     * Добавляет существующие, но не заданное свойство к заказу
-     * @param int $iOrderID ID заказа
-     * @param string $sPropCode CODE свойства
-     * @param string $sPropValue VALUE свойства (необязательный)
+     * @param int $iOrderID
+     * @param string $sPropCode
+     * @param string $sPropValue
      * @return int
      */
     public static function addProp($iOrderID = 0, $sPropCode = '', $sPropValue = '')
@@ -51,10 +41,9 @@ class Order
     }
 
     /**
-     * Обновляет значение свойства заказа
-     * @param int $iOrderID ID заказа
-     * @param string $sPropCode CODE свойства
-     * @param string $sPropValue VALUE свойства (необязательный)
+     * @param int $iOrderID
+     * @param string $sPropCode
+     * @param string $sPropValue
      * @return int
      * @throws \Bitrix\Main\ArgumentException
      * @throws \Bitrix\Main\ObjectPropertyException
@@ -87,8 +76,7 @@ class Order
     }
 
     /**
-     * Набор свойств относящихся к заказу
-     * @param int $iOrderID ID заказа
+     * @param int $iOrderID
      * @return array
      * @throws \Bitrix\Main\ArgumentException
      * @throws \Bitrix\Main\ObjectPropertyException

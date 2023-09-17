@@ -1,25 +1,15 @@
-<?php
-/**
- * Appointment: Помощники
- * Description: Набор полезных методов
- * File: Helper.php
- * Version: 0.0.3
- * Author: Anton Kuleshov
- **/
-
-namespace Falbar\Bitrix\Helper;
+<?php namespace Akbsit\Bitrix\Helper;
 
 use \Bitrix\Main\IO\File;
 use \Bitrix\Main\Application;
 
 /**
  * Class Helper
- * @package Falbar\Bitrix\Helper
+ * @package Akbsit\Bitrix\Helper
  */
 class Helper
 {
     /**
-     * Проверяем главную страницу
      * @return bool
      */
     public static function isMainPage()
@@ -28,8 +18,7 @@ class Helper
     }
 
     /**
-     * Проверяем нахождение в разделе
-     * @param string $sSection Раздел
+     * @param string $sSection
      * @return bool
      */
     public static function isSection($sSection = '')
@@ -44,9 +33,8 @@ class Helper
     }
 
     /**
-     * Получаем содержимое SVG файла
-     * @param string $sName Название файла
-     * @param string $sPath Путь до файла
+     * @param string $sName
+     * @param string $sPath
      * @return string
      */
     public static function getSVGByName($sName, $sPath = '/local/svg/')
@@ -64,9 +52,8 @@ class Helper
     }
 
     /**
-     * Отображаем SVG
-     * @param string $sName Название файла
-     * @param string $sPath Путь до файла
+     * @param string $sName
+     * @param string $sPath
      */
     public static function printSVGByName($sName, $sPath = '/local/svg/')
     {

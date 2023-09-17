@@ -1,17 +1,16 @@
 {
-    "name": "falbar/bitrix",
+    "name": "akbsit/bitrix",
     "description": "A set of useful methods for working with Bitrix API.",
     "keywords": [
         "bitrix",
         "framework",
         "php"
     ],
-    "homepage": "http://falbar.ru/",
     "license": "MIT",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Falbar\\Bitrix\\": "src"
+            "Akbsit\\Bitrix\\": "src"
         }
     },
     "require": {

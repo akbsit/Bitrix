@@ -1,13 +1,4 @@
-<?php
-/**
- * Appointment: Элемент информационного блока
- * Description: Набор полезных методов для элемента информационного блока
- * File: Element.php
- * Version: 0.0.2
- * Author: Anton Kuleshov
- **/
-
-namespace Falbar\Bitrix\IBlock;
+<?php namespace Akbsit\Bitrix\IBlock;
 
 use \Bitrix\Main\Loader;
 
@@ -15,31 +6,24 @@ Loader::includeModule('iblock');
 
 /**
  * Class Element
- * @package Falbar\Bitrix\IBlock
+ * @package Akbsit\Bitrix\IBlock
  */
 class Element
 {
-    /**
-     * Тип получения выборки fetch
-     */
     const GETLIST_FETCH = 'fetch';
 
-    /**
-     * Тип получения выборки getNext
-     */
     const GETLIST_GETNEXT = 'getNext';
 
     /**
-     * Список элементов
-     * @param int $iIBlockID ID инфоблока
-     * @param array $arParams Массив с заданными параметрами (необязательный)
+     * @param int $iIBlockID
+     * @param array $arParams
      * [
-     *     'select' => ['ID', 'NAME'], Возвращаемый массив полей элемента;
-     *     'limit' => 5, Количество возвращаемых элементов
-     *     'filter' => [], Массив фильтров выборки
-     *     'order' => 'desc' Направление сортировки (необязательный, по умолчанию DESC по ID)
+     *     'select' => ['ID', 'NAME'],
+     *     'limit' => 5,
+     *     'filter' => [],
+     *     'order' => 'desc'
      * ]
-     * @param string $sGetList Тип получения выборки (Element::GETLIST_FETCH, Element::GETLIST_GETNEXT)
+     * @param string $sGetList
      * @return array
      */
     public static function getList($iIBlockID = 0, $arParams = [], $sGetList = self::GETLIST_FETCH)

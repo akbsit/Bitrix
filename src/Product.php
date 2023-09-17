@@ -1,13 +1,4 @@
-<?php
-/**
- * Appointment: Товар
- * Description: Набор полезных методов для работы с товарами
- * File: Product.php
- * Version: 0.0.3
- * Author: Anton Kuleshov
- **/
-
-namespace Falbar\Bitrix;
+<?php namespace Akbsit\Bitrix;
 
 use \Bitrix\Main\Loader;
 
@@ -15,13 +6,12 @@ Loader::includeModule('catalog');
 
 /**
  * Class Product
- * @package Falbar\Bitrix
+ * @package Akbsit\Bitrix
  */
 class Product
 {
     /**
-     * Получает цену на товар
-     * @param int $iProductID ID товара
+     * @param int $iProductID
      * @return array
      */
     public static function getPrice($iProductID = 0)
